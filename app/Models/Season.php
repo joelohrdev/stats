@@ -5,20 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Player extends Model
+class Season extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name', 'birthdate', 'description'
+        'player_id', 'year', 'team'
     ];
 
     protected $casts = [
-        'birthdate' => 'date'
+        'year' => 'date'
     ];
 
-    public function season()
+    public function player()
     {
-        return $this->hasOne(Season::class);
+        $this->belongsTo(Player::class);
     }
 }
