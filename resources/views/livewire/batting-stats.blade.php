@@ -57,7 +57,7 @@
                         </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                        @foreach($player->battings as $ab)
+                        @forelse($player->battings as $ab)
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
@@ -117,7 +117,13 @@
                                 {{ $ab->strikeouts }}
                             </td>
                         </tr>
-                        @endforeach
+                        @empty
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center" colspan="16">
+                                    No Stats Yet
+                                </td>
+                            </tr>
+                        @endforelse
                         </tbody>
                     </table>
                 </div>
