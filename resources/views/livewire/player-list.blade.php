@@ -1,6 +1,6 @@
 <div>
     <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
-    @foreach($players as $player)
+    @forelse($players as $player)
     <li>
         <a href="/{{ $player->slug }}" class="space-y-4">
             <div class="w-full">
@@ -15,6 +15,8 @@
             </div>
         </a>
     </li>
-    @endforeach
+    @empty
+        <p>No Players Added Yet!</p>
+    @endforelse
     </ul>
 </div>
