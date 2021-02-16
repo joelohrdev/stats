@@ -15,9 +15,10 @@ class CreateSeasonsTable extends Migration
     {
         Schema::create('seasons', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('player_id');
+            $table->foreignId('player_id')->constrained();
             $table->date('year');
             $table->string('team');
+            $table->string('number');
             $table->timestamps();
         });
     }

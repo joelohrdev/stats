@@ -10,7 +10,7 @@ class Player extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'birthdate', 'description'
+        'name', 'slug', 'birthdate', 'description'
     ];
 
     protected $casts = [
