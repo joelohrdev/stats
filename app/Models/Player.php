@@ -21,4 +21,9 @@ class Player extends Model
     {
         return $this->hasOne(Season::class);
     }
+
+    public function battings()
+    {
+        return $this->hasMany(Batting::class);
+    }
 }
