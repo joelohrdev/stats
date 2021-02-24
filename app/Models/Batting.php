@@ -23,4 +23,10 @@ class Batting extends Model
     {
         $this->belongsTo(Player::class);
     }
+
+    public function getBattingAvgAttribute()
+    {
+        $test = 'testing';
+        return $test;
+    }
 }
