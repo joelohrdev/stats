@@ -1,6 +1,5 @@
-<div>
-
-    <header class="w-full relative">
+<div class="from-blue-600 via-teal-500 to-purple-500 bg-gradient-to-r h-screen">
+    <header class="w-full relative border-b-8 border-white">
         <img class=" w-full h-96 object-cover" src="/images/{{ $player->slug }}-bg.jpg" alt="">
         <div class="absolute inset-0 from-blue-900 via-blue-900 bg-gradient-to-t opacity-70"></div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 absolute -bottom-14 flex">
@@ -21,5 +20,4 @@
         <livewire:player-stat-bar :player="$player"/>
         <livewire:batting-stats :player="$player"/>
     </div>
-
 </div>
