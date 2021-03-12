@@ -7,7 +7,7 @@
     <title>Softball Stats</title>
     @livewireStyles
 </head>
-<body>
+<body class="bg-gray-800">
 
 @yield('content')
 

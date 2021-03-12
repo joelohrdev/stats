@@ -1,9 +1,9 @@
-<div class="from-blue-600 via-teal-500 to-purple-500 bg-gradient-to-r h-screen">
-    <header class="w-full relative border-b-8 border-white">
+<div class="bg-gray-800">
+    <header class="w-full relative border-b-4 border-white">
         <img class=" w-full h-96 object-cover" src="/images/{{ $player->slug }}-bg.jpg" alt="">
-        <div class="absolute inset-0 from-blue-900 via-blue-900 bg-gradient-to-t opacity-70"></div>
+        <div class="absolute inset-0 from-gray-900 via-gray-900 bg-gradient-to-t opacity-70"></div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 absolute -bottom-14 flex">
-            <img class="w-36 h-48 object-cover border-8 border-white" src="/images/{{ $player->slug }}.jpg" alt="">
+            <img class="w-36 h-48 object-cover border-4 border-white" src="/images/{{ $player->slug }}.jpg" alt="{{ $player->name }}">
             <div class="ml-4 mt-14">
                 <h1 class="text-3xl font-bold text-white">{{ $player->name }} @if($player->season)#{{ $player->season->number }}@endif</h1>
                 <span class="text-white">
@@ -16,7 +16,7 @@
         </div>
     </header>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-24">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-24 bg-gray-800">
         <livewire:player-stat-bar :player="$player"/>
         <livewire:batting-stats :player="$player"/>
     </div>
