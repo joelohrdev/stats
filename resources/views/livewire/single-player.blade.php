@@ -7,9 +7,9 @@
             <div class="ml-4 mt-14">
                 <h1 class="text-3xl font-bold text-white">{{ $player->name }} @if($player->season)#{{ $player->season->number }}@endif</h1>
                 <span class="text-white">
-                    {{ $player->description }} |
+                    {{ $player->description }} -
                     {{ \Carbon\Carbon::parse($player->birthdate)->format('F d, Y') }}
-                    @if($player->season)|
+                    @if($player->season)-
                     {{ \Carbon\Carbon::parse($player->season->year)->format('Y') }} {{ $player->season->team }}@endif
                 </span>
             </div>
