@@ -1,8 +1,11 @@
 <div>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Teams') }}
-        </h2>
+        <div class="flex justify-between">
+            <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
+                {{ __('Teams') }}
+            </h2>
+            <livewire:team.create-modal />
+        </div>
     </x-slot>
 
     <div class="py-12">
