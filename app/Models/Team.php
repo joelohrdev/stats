@@ -23,7 +23,7 @@ class Team extends Model
         return [
             'uuid' => 'string',
             'name' => 'string',
-            'year' => 'date:Y',
+            'year' => 'integer',
         ];
     }
 }
