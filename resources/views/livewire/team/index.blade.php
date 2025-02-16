@@ -18,7 +18,7 @@
                                 <flux:heading size="lg">{{ $team->year }} {{ $team->name }}</flux:heading>
 
                                 <flux:subheading class="mb-4">
-                                    <p>This action cannot be undone.</p>
+                                    <a wire:navigate href="{{ route('team.show', $team) }}">View</a>
                                 </flux:subheading>
                             </flux:card>
                         @endforeach

@@ -12,7 +12,6 @@ class Index extends Component
     {
         return view('livewire.team.index', [
             'teams' => Team::all(),
-        ])
-            ->layout('layouts.app');
+        ])->title('Teams')->layout('layouts.app');
     }
 }

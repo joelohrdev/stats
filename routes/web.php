@@ -12,6 +12,10 @@ Route::get('teams', \App\Livewire\Team\Index::class)
     ->middleware(['auth', 'verified'])
     ->name('team.index');
 
+Route::get('teams/{team:uuid}', \App\Livewire\Team\Show::class)
+    ->middleware(['auth', 'verified'])
+    ->name('team.show');
+
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
