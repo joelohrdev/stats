@@ -25,11 +25,6 @@
                     >
                         Dashboard
                     </flux:navlist.item>
-                </flux:navlist.group>
-            </flux:navlist>
-
-            <flux:navlist variant="outline">
-                <flux:navlist.group heading="Platform" class="grid">
                     <flux:navlist.item
                         icon="users"
                         :href="route('team.index')"
@@ -153,5 +148,9 @@
         {{ $slot }}
 
         @fluxScripts
+
+        @persist('toast')
+            <flux:toast />
+        @endpersist
     </body>
 </html>

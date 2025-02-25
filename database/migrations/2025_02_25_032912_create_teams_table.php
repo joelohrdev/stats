@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->uuid();
             $table->string('name');
-            $table->date('year');
+            $table->string('year');
             $table->timestamps();
         });
     }
