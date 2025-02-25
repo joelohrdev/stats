@@ -28,7 +28,7 @@
                     <flux:navlist.item
                         icon="users"
                         :href="route('team.index')"
-                        :current="request()->routeIs('team.index')"
+                        :current="request()->routeIs('team.*')"
                         wire:navigate
                     >
                         Teams

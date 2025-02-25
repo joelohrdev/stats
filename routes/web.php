@@ -20,6 +20,10 @@ Route::get('teams/create', \App\Livewire\Team\Create::class)
     ->middleware(['auth', 'verified'])
     ->name('team.create');
 
+Route::get('teams/{team}', \App\Livewire\Team\Show::class)
+    ->middleware(['auth', 'verified'])
+    ->name('team.show');
+
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
 

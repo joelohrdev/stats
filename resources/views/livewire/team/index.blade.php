@@ -14,7 +14,9 @@
                 <flux:table.row>
                     <flux:table.cell>{{ $team->name }}</flux:table.cell>
                     <flux:table.cell>{{ $team->year }}</flux:table.cell>
-                    <flux:table.cell variant="strong" class="flex justify-end">View</flux:table.cell>
+                    <flux:table.cell variant="strong" class="flex justify-end">
+                        <a wire:navigate href="{{ route('team.show', $team) }}">View</a>
+                    </flux:table.cell>
                 </flux:table.row>
             @endforeach
         </flux:table.rows>
