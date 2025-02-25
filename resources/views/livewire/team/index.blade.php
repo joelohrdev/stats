@@ -1,5 +1,8 @@
-<div>
-    <flux:table class="mx-auto w-full max-w-3xl">
+<div class="mx-auto w-full max-w-3xl">
+    <div class="mb-10 flex justify-end">
+        <flux:button wire:navigate href="{{ route('team.create') }}" variant="primary" size="sm">Add team</flux:button>
+    </div>
+    <flux:table>
         <flux:table.columns>
             <flux:table.column>Team Name</flux:table.column>
             <flux:table.column>Year</flux:table.column>

@@ -17,6 +17,7 @@
             <flux:error name="year" />
         </flux:field>
 
-        <flux:button type="submit">Submit</flux:button>
+        <flux:button variant="primary" type="submit">Submit</flux:button>
+        <flux:button href="{{ route('team.index') }}">Cancel</flux:button>
     </form>
 </div>
