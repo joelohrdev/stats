@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Team\Index;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -10,6 +11,10 @@ Route::get('/', function () {
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+Route::get('teams', Index::class)
+    ->middleware(['auth', 'verified'])
+    ->name('team.index');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
