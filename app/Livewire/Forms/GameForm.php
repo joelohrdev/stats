@@ -10,7 +10,7 @@ class GameForm extends Form
     #[Validate('nullable')]
     public $opponent;
 
-    #[Validate('nullable')]
+    #[Validate('nullable|unique:opponents,name')]
     public $newOpponent;
 
     #[Validate('nullable|date')]

@@ -4,6 +4,7 @@
             <flux:heading size="xl">Add Game</flux:heading>
             <flux:heading>{{ $team->year }} {{ $team->name }}</flux:heading>
         </div>
+        <flux:button wire:navigate icon="arrow-left" href="{{ route('team.show', $team) }}">Back</flux:button>
     </div>
     <div class="mx-auto max-w-xl">
         @foreach ($errors->all() as $error)
@@ -12,30 +13,24 @@
 
         <form wire:submit="createGame" class="space-y-6">
             <div>
-                <!-- Separate search input field that we can reliably track -->
-                <flux:input wire:model.live="searchTerm" size="sm" placeholder="Search for opponent" />
+                <div class="mt-2">
+                    <flux:select
+                        wire:model.live="form.opponent"
+                        size="sm"
+                        variant="listbox"
+                        searchable
+                        clearable
+                        :filter="false"
+                    >
+                        @foreach ($this->opponents() as $opponent)
+                            <flux:select.option value="{{ $opponent->id }}">{{ $opponent->name }}</flux:select.option>
+                        @endforeach
+                    </flux:select>
+                </div>
 
-                <!-- Show dropdown only when there are search results -->
-                @if ($this->searchResults()->isNotEmpty())
+                @if (! $form?->opponent)
                     <div class="mt-2">
-                        <flux:select wire:model="form.opponent" size="sm" variant="listbox">
-                            @foreach ($this->searchResults() as $opponent)
-                                <flux:select.option>{{ $opponent->name }}</flux:select.option>
-                            @endforeach
-                        </flux:select>
-                    </div>
-                @endif
-
-                <!-- Show "Add New" field when search has no results -->
-                @if (! empty($searchTerm) && $this->searchResults()->isEmpty())
-                    <div class="mt-2">
-                        <flux:input
-                            wire:model="form.newOpponent"
-                            size="sm"
-                            placeholder="Add this as a new opponent"
-                            value="{{ $searchTerm }}"
-                        />
-                        <p class="text-sm text-gray-500">No matches found. This will create a new opponent.</p>
+                        <flux:input wire:model="form.newOpponent" size="sm" placeholder="Add new opponent" />
                     </div>
                 @endif
             </div>
