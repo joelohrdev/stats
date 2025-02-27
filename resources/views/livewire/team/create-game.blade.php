@@ -12,9 +12,16 @@
         @endforeach
 
         <form wire:submit="createGame" class="space-y-6">
+            @if ($form->opponent && $form->newOpponent)
+                <div class="mb-4 rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-600">
+                    Please either select an existing opponent or add a new one, but not both.
+                </div>
+            @endif
+
             <div>
                 <div class="mt-2">
                     <flux:select
+                        placeholder="Select existing opponent"
                         wire:model.live="form.opponent"
                         size="sm"
                         variant="listbox"
@@ -28,11 +35,9 @@
                     </flux:select>
                 </div>
 
-                @if (! $form?->opponent)
-                    <div class="mt-2">
-                        <flux:input wire:model="form.newOpponent" size="sm" placeholder="Add new opponent" />
-                    </div>
-                @endif
+                <div class="mt-2">
+                    <flux:input wire:model.live="form.newOpponent" size="sm" placeholder="Add new opponent" />
+                </div>
             </div>
 
             <flux:date-picker wire:model="form.date" size="sm" />

@@ -20,7 +20,7 @@ class CreateGame extends Component
         return Opponent::query()->orderBy('name')->get();
     }
 
-    public function createGame()
+    public function createGame(): void
     {
         if ($this->form->newOpponent && ! $this->form->opponent) {
             $newOpponent = Opponent::firstOrCreate(['name' => $this->form->newOpponent]);
