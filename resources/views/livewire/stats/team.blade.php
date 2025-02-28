@@ -21,7 +21,7 @@ new class extends Component
             $games = Game::all()->unique('date');
         }
 
-        $sortedGames = $games->sortBy('date');
+        $sortedGames = $games->sortByDesc('date');
 
         foreach ($sortedGames as $game) {
             $this->data[] = [
