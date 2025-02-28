@@ -22,6 +22,8 @@ class CreateGame extends Component
 
     public function createGame(): void
     {
+        $this->validate();
+
         if ($this->form->newOpponent && ! $this->form->opponent) {
             $newOpponent = Opponent::firstOrCreate(['name' => $this->form->newOpponent]);
         }
@@ -29,7 +31,6 @@ class CreateGame extends Component
         $this->team->games()->create([
             'opponent_id' => $newOpponent->id ?? $this->form->opponent,
             'date' => $this->form->date,
-            'gp' => $this->form->gp,
             'pa' => $this->form->pa,
             'ab' => $this->form->ab,
             'avg' => $this->form->avg,
@@ -57,7 +58,7 @@ class CreateGame extends Component
             'pik' => $this->form->pik,
         ]);
 
-        $this->reset('form');
+        $this->form->reset();
     }
 
     public function render(): View

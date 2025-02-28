@@ -17,24 +17,21 @@ class GameForm extends Form
     public $date;
 
     #[Validate('nullable|integer')]
-    public $gp;
-
-    #[Validate('nullable|integer')]
     public $pa;
 
     #[Validate('nullable|integer')]
     public $ab;
 
-    #[Validate('nullable|integer')]
+    #[Validate('nullable|decimal:3,3')]
     public $avg;
 
-    #[Validate('nullable|integer')]
+    #[Validate('nullable|decimal:3,3')]
     public $obp;
 
-    #[Validate('nullable|integer')]
+    #[Validate('nullable|decimal:3,3')]
     public $ops;
 
-    #[Validate('nullable|integer')]
+    #[Validate('nullable|decimal:3,3')]
     public $slg;
 
     #[Validate('nullable|integer')]

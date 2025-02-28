@@ -13,13 +13,12 @@ return new class extends Migration
             $table->foreignId('team_id');
             $table->foreignId('opponent_id');
             $table->date('date');
-            $table->integer('gp')->default(0);
             $table->integer('pa')->default(0);
             $table->integer('ab')->default(0);
-            $table->integer('avg')->default(0);
-            $table->integer('obp')->default(0);
-            $table->integer('ops')->default(0);
-            $table->integer('slg')->default(0);
+            $table->decimal('avg', 3, 3)->default(0);
+            $table->decimal('obp', 3, 3)->default(0);
+            $table->decimal('ops', 3, 3)->default(0);
+            $table->decimal('slg', 3, 3)->default(0);
             $table->integer('h')->default(0);
             $table->integer('singles')->default(0);
             $table->integer('doubles')->default(0);

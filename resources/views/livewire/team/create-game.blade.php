@@ -43,13 +43,12 @@
             <flux:date-picker wire:model="form.date" size="sm" />
 
             <div class="grid grid-cols-4 gap-5">
-                <flux:input wire:model="form.gp" size="sm" type="number" placeholder="GP" />
                 <flux:input wire:model="form.pa" size="sm" type="number" placeholder="PA" />
                 <flux:input wire:model="form.ab" size="sm" type="number" placeholder="AB" />
-                <flux:input wire:model="form.avg" size="sm" type="number" placeholder="AVG" />
-                <flux:input wire:model="form.obp" size="sm" type="number" placeholder="OBP" />
-                <flux:input wire:model="form.ops" size="sm" type="number" placeholder="OPS" />
-                <flux:input wire:model="form.slg" size="sm" type="number" placeholder="SLG" />
+                <flux:input wire:model="form.avg" size="sm" type="string" placeholder="AVG" />
+                <flux:input wire:model="form.obp" size="sm" type="string" placeholder="OBP" />
+                <flux:input wire:model="form.ops" size="sm" type="string" placeholder="OPS" />
+                <flux:input wire:model="form.slg" size="sm" type="string" placeholder="SLG" />
                 <flux:input wire:model="form.h" size="sm" type="number" placeholder="H" />
                 <flux:input wire:model="form.singles" size="sm" type="number" placeholder="1B" />
                 <flux:input wire:model="form.doubles" size="sm" type="number" placeholder="2B" />
